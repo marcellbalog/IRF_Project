@@ -14,6 +14,7 @@ namespace IRF_Project
 	{
 		MealDatabaseEntities data = new MealDatabaseEntities();
 
+		List<Meal> allMeals = new List<Meal>();
 		List<Meal> selected = new List<Meal>();
 		int allCalorie = 0;
 
@@ -23,6 +24,7 @@ namespace IRF_Project
 
 			var ilist = from i in data.Meals
 						select i;
+			allMeals = ilist.ToList();
 			listBox1.DataSource = ilist.ToList();
 
 			listBox1.DisplayMember = "Name";
@@ -79,5 +81,41 @@ namespace IRF_Project
 				calorieLabel.Text = ((Meal)listBox2.SelectedItem).Calorie.ToString();
 			}
 		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			Console.WriteLine("Generate");
+			int cal = 0;
+			int meal = 0;
+			try
+			{
+				cal = Int32.Parse(generateCalorieTextBox.Text);
+				meal = Int32.Parse(generateMealCountTextBox.Text);
+			}
+			catch
+			{
+				Console.WriteLine("Error");
+				generateErrorLabel.Text = "Please add valid input...";
+				return;
+			}
+
+			List<Meal> mealList = allMeals;
+			List<Meal> generatedList = new List<Meal>();
+			Random rnd = new Random();
+			int num = 0;
+
+			while (meal > 0)
+			{
+				num = rnd.Next(0, mealList.Count);
+				generatedList.Add(mealList[num]);
+				mealList.RemoveAt(num);
+				meal--;
+			}
+
+			selected = generatedList;
+			RefreshSelectedList();
+		}
+
+		
 	}
 }

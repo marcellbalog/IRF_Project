@@ -41,6 +41,13 @@
 			this.calorieLabel = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.allCalorieLabel = new System.Windows.Forms.Label();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
+			this.generateMealCountTextBox = new System.Windows.Forms.TextBox();
+			this.generateCalorieTextBox = new System.Windows.Forms.TextBox();
+			this.generateErrorLabel = new System.Windows.Forms.Label();
+			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// listBox1
@@ -111,9 +118,9 @@
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label4.Location = new System.Drawing.Point(434, 109);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(56, 17);
+			this.label4.Size = new System.Drawing.Size(57, 17);
 			this.label4.TabIndex = 6;
-			this.label4.Text = "Calorie:";
+			this.label4.Text = "Protein:";
 			// 
 			// label5
 			// 
@@ -121,9 +128,9 @@
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label5.Location = new System.Drawing.Point(434, 138);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(56, 17);
+			this.label5.Size = new System.Drawing.Size(49, 17);
 			this.label5.TabIndex = 7;
-			this.label5.Text = "Calorie:";
+			this.label5.Text = "Carbs:";
 			// 
 			// label6
 			// 
@@ -157,12 +164,13 @@
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(37, 346);
+			this.button1.Location = new System.Drawing.Point(37, 53);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(150, 22);
 			this.button1.TabIndex = 11;
 			this.button1.Text = "Generate random";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// allCalorieLabel
 			// 
@@ -174,12 +182,72 @@
 			this.allCalorieLabel.TabIndex = 12;
 			this.allCalorieLabel.Text = "0";
 			// 
+			// panel1
+			// 
+			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.panel1.BackColor = System.Drawing.Color.OldLace;
+			this.panel1.Controls.Add(this.label8);
+			this.panel1.Controls.Add(this.label7);
+			this.panel1.Controls.Add(this.generateMealCountTextBox);
+			this.panel1.Controls.Add(this.generateCalorieTextBox);
+			this.panel1.Controls.Add(this.generateErrorLabel);
+			this.panel1.Controls.Add(this.button1);
+			this.panel1.Location = new System.Drawing.Point(0, 348);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(638, 87);
+			this.panel1.TabIndex = 13;
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.Location = new System.Drawing.Point(128, 5);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(60, 13);
+			this.label8.TabIndex = 16;
+			this.label8.Text = "Meal count";
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(37, 5);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(77, 13);
+			this.label7.TabIndex = 15;
+			this.label7.Text = "Desired calorie";
+			// 
+			// generateMealCountTextBox
+			// 
+			this.generateMealCountTextBox.Location = new System.Drawing.Point(131, 21);
+			this.generateMealCountTextBox.Name = "generateMealCountTextBox";
+			this.generateMealCountTextBox.Size = new System.Drawing.Size(56, 20);
+			this.generateMealCountTextBox.TabIndex = 14;
+			this.generateMealCountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			// 
+			// generateCalorieTextBox
+			// 
+			this.generateCalorieTextBox.Location = new System.Drawing.Point(40, 21);
+			this.generateCalorieTextBox.Name = "generateCalorieTextBox";
+			this.generateCalorieTextBox.Size = new System.Drawing.Size(74, 20);
+			this.generateCalorieTextBox.TabIndex = 13;
+			this.generateCalorieTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			// 
+			// generateErrorLabel
+			// 
+			this.generateErrorLabel.AutoSize = true;
+			this.generateErrorLabel.ForeColor = System.Drawing.Color.Red;
+			this.generateErrorLabel.Location = new System.Drawing.Point(202, 58);
+			this.generateErrorLabel.Name = "generateErrorLabel";
+			this.generateErrorLabel.Size = new System.Drawing.Size(29, 13);
+			this.generateErrorLabel.TabIndex = 12;
+			this.generateErrorLabel.Text = "Error";
+			// 
 			// MainUC
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.allCalorieLabel);
-			this.Controls.Add(this.button1);
 			this.Controls.Add(this.calorieLabel);
 			this.Controls.Add(this.removeButton);
 			this.Controls.Add(this.label6);
@@ -192,7 +260,9 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.listBox1);
 			this.Name = "MainUC";
-			this.Size = new System.Drawing.Size(639, 380);
+			this.Size = new System.Drawing.Size(639, 436);
+			this.panel1.ResumeLayout(false);
+			this.panel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -213,5 +283,11 @@
 		private System.Windows.Forms.Label calorieLabel;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label allCalorieLabel;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.TextBox generateMealCountTextBox;
+		private System.Windows.Forms.TextBox generateCalorieTextBox;
+		private System.Windows.Forms.Label generateErrorLabel;
+		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.Label label7;
 	}
 }

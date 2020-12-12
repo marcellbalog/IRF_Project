@@ -40,7 +40,7 @@
 			this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
 			this.panel1.Location = new System.Drawing.Point(26, 71);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(773, 393);
+			this.panel1.Size = new System.Drawing.Size(773, 457);
 			this.panel1.TabIndex = 0;
 			// 
 			// label1
@@ -57,7 +57,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(833, 488);
+			this.ClientSize = new System.Drawing.Size(833, 552);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.panel1);
 			this.Name = "Form1";
