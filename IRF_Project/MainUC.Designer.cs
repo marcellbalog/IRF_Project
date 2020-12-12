@@ -240,9 +240,8 @@
 			this.generateErrorLabel.ForeColor = System.Drawing.Color.Red;
 			this.generateErrorLabel.Location = new System.Drawing.Point(202, 58);
 			this.generateErrorLabel.Name = "generateErrorLabel";
-			this.generateErrorLabel.Size = new System.Drawing.Size(29, 13);
+			this.generateErrorLabel.Size = new System.Drawing.Size(0, 13);
 			this.generateErrorLabel.TabIndex = 12;
-			this.generateErrorLabel.Text = "Error";
 			// 
 			// sorterDropdown
 			// 

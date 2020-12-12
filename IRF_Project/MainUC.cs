@@ -47,6 +47,9 @@ namespace IRF_Project
 				listBox2.SelectedIndex = 0;
 		}
 
+		/// <summary>
+		/// Frissíti a kiválasztott elemekből álló ListBox-ot.
+		/// </summary>
 		void RefreshSelectedList()
 		{
 			listBox2.DataSource = null;
@@ -84,6 +87,8 @@ namespace IRF_Project
 			}
 		}
 
+
+		///RANDOM GENERÁTOR (kifejtve a readme-ben)
 		private void button1_Click(object sender, EventArgs e)
 		{
 			
@@ -100,24 +105,53 @@ namespace IRF_Project
 				generateErrorLabel.Text = "Please add valid input...";
 				return;
 			}
-
+			
 			List<Meal> mealList = allMeals.ToList();
 			List<Meal> generatedList = new List<Meal>();
 			Random rnd = new Random();
 			int num = 0;
+			float average = 0;			
 
 			while (meal > 0)
 			{
-				num = rnd.Next(0, mealList.Count);
+				Console.WriteLine("generating...");
+				Console.WriteLine("cal: " + cal + ", average: " + average);
+				///az első étel random generálása és átlagszámítás
+				if (generatedList.Count < 1)
+				{
+					
+					num = rnd.Next(0, mealList.Count);
+					average = (float)(cal- mealList[num].Calorie) / (meal-1);
+				}
+				else				
+				{	///az átlaghoz való legközelebbi étel kiválasztása
+					int selectedM = 0;
+					for (int i = 1; i < mealList.Count; i++)
+					{
+						if (Math.Abs(average - mealList[selectedM].Calorie) > Math.Abs(average - mealList[i].Calorie))
+						{
+							Console.WriteLine(Math.Abs(average - mealList[selectedM].Calorie) + " > " + Math.Abs(average - mealList[i].Calorie));
+							selectedM = i;
+						}
+					}
+					num = selectedM;
+				}
+
+
+				///listák és váltokzók frissítése
 				generatedList.Add(mealList[num]);
-				mealList.RemoveAt(num);
 				meal--;
+				cal -= mealList[num].Calorie;
+				mealList.RemoveAt(num);
 			}
 
+			///generált lista betöltése
 			selected = generatedList;
 			RefreshSelectedList();
 		}
 
+
+		///SORTING DROPDOWN
 		private void sorterDropdown_SelectedIndexChanged(object sender, EventArgs e)
 		{			
 			List<Meal> newSort = new List<Meal>();			
