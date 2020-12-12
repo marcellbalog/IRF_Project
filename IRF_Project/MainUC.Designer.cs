@@ -39,6 +39,8 @@
 			this.label6 = new System.Windows.Forms.Label();
 			this.removeButton = new System.Windows.Forms.Button();
 			this.calorieLabel = new System.Windows.Forms.Label();
+			this.button1 = new System.Windows.Forms.Button();
+			this.allCalorieLabel = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// listBox1
@@ -50,6 +52,7 @@
 			this.listBox1.Name = "listBox1";
 			this.listBox1.Size = new System.Drawing.Size(150, 244);
 			this.listBox1.TabIndex = 0;
+			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
 			// 
 			// label1
 			// 
@@ -80,6 +83,7 @@
 			this.listBox2.Name = "listBox2";
 			this.listBox2.Size = new System.Drawing.Size(150, 212);
 			this.listBox2.TabIndex = 3;
+			this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged);
 			// 
 			// label2
 			// 
@@ -151,10 +155,31 @@
 			this.calorieLabel.TabIndex = 10;
 			this.calorieLabel.Text = "0";
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(37, 346);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(150, 22);
+			this.button1.TabIndex = 11;
+			this.button1.Text = "Generate random";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
+			// allCalorieLabel
+			// 
+			this.allCalorieLabel.AutoSize = true;
+			this.allCalorieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.allCalorieLabel.Location = new System.Drawing.Point(519, 274);
+			this.allCalorieLabel.Name = "allCalorieLabel";
+			this.allCalorieLabel.Size = new System.Drawing.Size(18, 20);
+			this.allCalorieLabel.TabIndex = 12;
+			this.allCalorieLabel.Text = "0";
+			// 
 			// MainUC
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.allCalorieLabel);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.calorieLabel);
 			this.Controls.Add(this.removeButton);
 			this.Controls.Add(this.label6);
@@ -186,5 +211,7 @@
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Button removeButton;
 		private System.Windows.Forms.Label calorieLabel;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Label allCalorieLabel;
 	}
 }
