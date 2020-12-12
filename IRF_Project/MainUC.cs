@@ -69,6 +69,7 @@ namespace IRF_Project
 			{
 				listBox2.ClearSelected();
 				calorieLabel.Text = ((Meal)listBox1.SelectedItem).Calorie.ToString();
+				mealName.Text = ((Meal)listBox1.SelectedItem).Name;
 			}
 		}
 
@@ -79,12 +80,13 @@ namespace IRF_Project
 			{
 				listBox1.ClearSelected();
 				calorieLabel.Text = ((Meal)listBox2.SelectedItem).Calorie.ToString();
+				mealName.Text = ((Meal)listBox2.SelectedItem).Name;
 			}
 		}
 
 		private void button1_Click(object sender, EventArgs e)
 		{
-			Console.WriteLine("Generate");
+			
 			int cal = 0;
 			int meal = 0;
 			try
@@ -99,7 +101,7 @@ namespace IRF_Project
 				return;
 			}
 
-			List<Meal> mealList = allMeals;
+			List<Meal> mealList = allMeals.ToList();
 			List<Meal> generatedList = new List<Meal>();
 			Random rnd = new Random();
 			int num = 0;
@@ -116,6 +118,26 @@ namespace IRF_Project
 			RefreshSelectedList();
 		}
 
-		
+		private void sorterDropdown_SelectedIndexChanged(object sender, EventArgs e)
+		{			
+			List<Meal> newSort = new List<Meal>();			
+
+			if (sorterDropdown.SelectedIndex == 0)
+			{
+				newSort = allMeals.OrderBy(x => x.Id).ToList();
+			}
+			else if (sorterDropdown.SelectedIndex == 1)
+			{
+				newSort = allMeals.OrderBy(x => x.Calorie).ToList();
+			}
+			else if (sorterDropdown.SelectedIndex == 2)
+			{
+				newSort = allMeals.OrderBy(x => x.Name).ToList();	
+			}
+
+			listBox1.DataSource = newSort;
+			listBox1.DisplayMember = "Name";
+			listBox1.ClearSelected();
+		}
 	}
 }

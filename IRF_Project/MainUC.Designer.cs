@@ -47,6 +47,8 @@
 			this.generateMealCountTextBox = new System.Windows.Forms.TextBox();
 			this.generateCalorieTextBox = new System.Windows.Forms.TextBox();
 			this.generateErrorLabel = new System.Windows.Forms.Label();
+			this.sorterDropdown = new System.Windows.Forms.ComboBox();
+			this.mealName = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -106,7 +108,7 @@
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label3.Location = new System.Drawing.Point(434, 82);
+			this.label3.Location = new System.Drawing.Point(434, 113);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(56, 17);
 			this.label3.TabIndex = 5;
@@ -116,7 +118,7 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label4.Location = new System.Drawing.Point(434, 109);
+			this.label4.Location = new System.Drawing.Point(434, 140);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(57, 17);
 			this.label4.TabIndex = 6;
@@ -126,7 +128,7 @@
 			// 
 			this.label5.AutoSize = true;
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.label5.Location = new System.Drawing.Point(434, 138);
+			this.label5.Location = new System.Drawing.Point(434, 169);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(49, 17);
 			this.label5.TabIndex = 7;
@@ -156,7 +158,7 @@
 			// 
 			this.calorieLabel.AutoSize = true;
 			this.calorieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.calorieLabel.Location = new System.Drawing.Point(496, 82);
+			this.calorieLabel.Location = new System.Drawing.Point(496, 113);
 			this.calorieLabel.Name = "calorieLabel";
 			this.calorieLabel.Size = new System.Drawing.Size(16, 17);
 			this.calorieLabel.TabIndex = 10;
@@ -242,10 +244,36 @@
 			this.generateErrorLabel.TabIndex = 12;
 			this.generateErrorLabel.Text = "Error";
 			// 
+			// sorterDropdown
+			// 
+			this.sorterDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.sorterDropdown.Items.AddRange(new object[] {
+            "ID",
+            "Calorie",
+            "Name"});
+			this.sorterDropdown.Location = new System.Drawing.Point(130, 24);
+			this.sorterDropdown.MaxDropDownItems = 3;
+			this.sorterDropdown.Name = "sorterDropdown";
+			this.sorterDropdown.Size = new System.Drawing.Size(57, 21);
+			this.sorterDropdown.TabIndex = 14;
+			this.sorterDropdown.SelectedIndexChanged += new System.EventHandler(this.sorterDropdown_SelectedIndexChanged);
+			// 
+			// mealName
+			// 
+			this.mealName.AutoSize = true;
+			this.mealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.mealName.Location = new System.Drawing.Point(435, 82);
+			this.mealName.Name = "mealName";
+			this.mealName.Size = new System.Drawing.Size(60, 18);
+			this.mealName.TabIndex = 15;
+			this.mealName.Text = "Name...";
+			// 
 			// MainUC
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.mealName);
+			this.Controls.Add(this.sorterDropdown);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.allCalorieLabel);
 			this.Controls.Add(this.calorieLabel);
@@ -289,5 +317,7 @@
 		private System.Windows.Forms.Label generateErrorLabel;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label7;
+		private System.Windows.Forms.ComboBox sorterDropdown;
+		private System.Windows.Forms.Label mealName;
 	}
 }
