@@ -291,12 +291,15 @@
 			// 
 			// generateErrorLabel
 			// 
-			this.generateErrorLabel.AutoSize = true;
+			this.generateErrorLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.generateErrorLabel.ForeColor = System.Drawing.Color.Red;
-			this.generateErrorLabel.Location = new System.Drawing.Point(202, 58);
+			this.generateErrorLabel.ImageAlign = System.Drawing.ContentAlignment.TopRight;
+			this.generateErrorLabel.Location = new System.Drawing.Point(360, 58);
 			this.generateErrorLabel.Name = "generateErrorLabel";
-			this.generateErrorLabel.Size = new System.Drawing.Size(0, 13);
+			this.generateErrorLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.generateErrorLabel.Size = new System.Drawing.Size(172, 13);
 			this.generateErrorLabel.TabIndex = 12;
+			this.generateErrorLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// sorterDropdown
 			// 

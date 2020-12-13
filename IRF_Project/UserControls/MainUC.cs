@@ -40,14 +40,21 @@ namespace IRF_Project
 
 		private void addButton_Click(object sender, EventArgs e)
 		{
+			if (listBox1.SelectedItem == null)
+				return;
+
 			var id = (Meal)listBox1.SelectedItem;
 			selected.Add(id);
 			Console.WriteLine(selected.Count);
 			RefreshSelectedList();
+			
 		}
 
 		private void removeButton_Click(object sender, EventArgs e)
 		{
+			if (listBox1.SelectedItem == null)
+				return;
+
 			var id = (Meal)listBox2.SelectedItem;
 			selected.Remove(id);
 			RefreshSelectedList();
@@ -71,6 +78,8 @@ namespace IRF_Project
 				allCalorie += selected[i].Calorie;
 			}
 			allCalorieLabel.Text = allCalorie.ToString();
+
+			generateErrorLabel.Text = "";
 		}
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -184,21 +193,31 @@ namespace IRF_Project
 
 		private void saveButton_Click(object sender, EventArgs e)
 		{
+			if (selected.Count == 0)
+			{
+				generateErrorLabel.Text = "Error: No meals selected";
+				generateErrorLabel.ForeColor = Color.Red;
+				return;
+			}
+
 			Console.WriteLine(progressList.Count + 1 + " " + allCalorie + " " + selected.Count);
 
 			///létrehozunk egy új napot
 			DayProgress newDay = new DayProgress(progressList.Count+1, allCalorie, selected.Count);
 			
 			///a kiválasztott elemek id-ját kilisitázva átadjuk
-			newDay.CreateMealString((from item in selected select item.Id).ToList());
-			Console.WriteLine("mealstring: " + newDay.MealString + ", " + newDay.MealCount);
+			newDay.CreateMealString((from item in selected select item.Name).ToList());
+			Console.WriteLine("mealstring: " + newDay.MealString.Length + ", " + newDay.MealCount);
 
 			///a napot hozzáadjuk a táblához
 			data.DayProgresses.Add(newDay);
 			data.SaveChanges();
-			Console.WriteLine("added");
 			progressList.Add(newDay);
-			
+			selected.Clear();
+			RefreshSelectedList();
+
+			generateErrorLabel.Text = "Day saved";
+			generateErrorLabel.ForeColor = Color.Green;
 		}
 	}
 }

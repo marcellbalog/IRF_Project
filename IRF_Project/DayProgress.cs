@@ -31,15 +31,13 @@ namespace IRF_Project
 			MealCount = mealCount;
 		}
 
-		public void CreateMealString(List<int> mealIDs)
-		{
-			Console.WriteLine(mealIDs[0].ToString());
+		public void CreateMealString(List<string> mealNames)
+		{			
 			MealString = "";
-			for (int i = 0; i < mealIDs.Count; i++)
+			for (int i = 0; i < mealNames.Count; i++)
 			{
-				MealString = MealString.Insert(MealString.Length, mealIDs[i].ToString());
+				MealString = MealString.Insert(MealString.Length, mealNames[i]);
 				MealString = MealString.Insert(MealString.Length, ";");
-				Console.WriteLine(MealString);
 			}			
 		}
 	}
