@@ -20,5 +20,21 @@ namespace IRF_Project
 			panel1.Controls.Add(MainPanel);
 			MainPanel.Dock = DockStyle.Fill;
 		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			panel1.Controls.Clear();
+			MainUC MainPanel = new MainUC();
+			panel1.Controls.Add(MainPanel);
+			MainPanel.Dock = DockStyle.Fill;
+		}
+
+		private void button1_Click(object sender, EventArgs e)
+		{
+			panel1.Controls.Clear();
+			ProgressUC ProgressPanel = new ProgressUC();
+			panel1.Controls.Add(ProgressPanel);
+			ProgressPanel.Dock = DockStyle.Fill;
+		}
 	}
 }

@@ -80,10 +80,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainUC.cs">
+    <Compile Include="UserControls\MainUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainUC.Designer.cs">
+    <Compile Include="UserControls\MainUC.Designer.cs">
       <DependentUpon>MainUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Meal.cs">
@@ -125,20 +125,20 @@
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="ProgressUC.cs">
+    <Compile Include="UserControls\ProgressUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProgressUC.Designer.cs">
+    <Compile Include="UserControls\ProgressUC.Designer.cs">
       <DependentUpon>ProgressUC.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainUC.resx">
+    <EmbeddedResource Include="UserControls\MainUC.resx">
       <DependentUpon>MainUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProgressUC.resx">
+    <EmbeddedResource Include="UserControls\ProgressUC.resx">
       <DependentUpon>ProgressUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

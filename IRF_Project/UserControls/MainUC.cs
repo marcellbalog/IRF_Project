@@ -197,6 +197,8 @@ namespace IRF_Project
 			data.DayProgresses.Add(newDay);
 			data.SaveChanges();
 			Console.WriteLine("added");
+			progressList.Add(newDay);
+			
 		}
 	}
 }

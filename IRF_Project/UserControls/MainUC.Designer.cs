@@ -42,17 +42,17 @@
 			this.button1 = new System.Windows.Forms.Button();
 			this.allCalorieLabel = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.saveButton = new System.Windows.Forms.Button();
+			this.calorieNumeric = new System.Windows.Forms.NumericUpDown();
+			this.mealNumeric = new System.Windows.Forms.NumericUpDown();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
 			this.generateErrorLabel = new System.Windows.Forms.Label();
 			this.sorterDropdown = new System.Windows.Forms.ComboBox();
 			this.mealName = new System.Windows.Forms.Label();
-			this.mealNumeric = new System.Windows.Forms.NumericUpDown();
-			this.calorieNumeric = new System.Windows.Forms.NumericUpDown();
-			this.saveButton = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.mealNumeric)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.calorieNumeric)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.mealNumeric)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// listBox1
@@ -204,6 +204,73 @@
 			this.panel1.Size = new System.Drawing.Size(638, 87);
 			this.panel1.TabIndex = 13;
 			// 
+			// saveButton
+			// 
+			this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.saveButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.saveButton.ForeColor = System.Drawing.Color.OliveDrab;
+			this.saveButton.Location = new System.Drawing.Point(535, 16);
+			this.saveButton.Name = "saveButton";
+			this.saveButton.Size = new System.Drawing.Size(85, 59);
+			this.saveButton.TabIndex = 19;
+			this.saveButton.Text = "Save Day";
+			this.saveButton.UseVisualStyleBackColor = false;
+			this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+			// 
+			// calorieNumeric
+			// 
+			this.calorieNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.calorieNumeric.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+			this.calorieNumeric.Location = new System.Drawing.Point(40, 21);
+			this.calorieNumeric.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+			this.calorieNumeric.Minimum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+			this.calorieNumeric.Name = "calorieNumeric";
+			this.calorieNumeric.Size = new System.Drawing.Size(74, 23);
+			this.calorieNumeric.TabIndex = 18;
+			this.calorieNumeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.calorieNumeric.Value = new decimal(new int[] {
+            1500,
+            0,
+            0,
+            0});
+			// 
+			// mealNumeric
+			// 
+			this.mealNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.mealNumeric.Location = new System.Drawing.Point(130, 21);
+			this.mealNumeric.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+			this.mealNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.mealNumeric.Name = "mealNumeric";
+			this.mealNumeric.Size = new System.Drawing.Size(56, 23);
+			this.mealNumeric.TabIndex = 17;
+			this.mealNumeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.mealNumeric.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+			// 
 			// label8
 			// 
 			this.label8.AutoSize = true;
@@ -255,73 +322,6 @@
 			this.mealName.TabIndex = 15;
 			this.mealName.Text = "Name...";
 			// 
-			// mealNumeric
-			// 
-			this.mealNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.mealNumeric.Location = new System.Drawing.Point(130, 21);
-			this.mealNumeric.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-			this.mealNumeric.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-			this.mealNumeric.Name = "mealNumeric";
-			this.mealNumeric.Size = new System.Drawing.Size(56, 23);
-			this.mealNumeric.TabIndex = 17;
-			this.mealNumeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.mealNumeric.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-			// 
-			// calorieNumeric
-			// 
-			this.calorieNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.calorieNumeric.Increment = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
-			this.calorieNumeric.Location = new System.Drawing.Point(40, 21);
-			this.calorieNumeric.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-			this.calorieNumeric.Minimum = new decimal(new int[] {
-            300,
-            0,
-            0,
-            0});
-			this.calorieNumeric.Name = "calorieNumeric";
-			this.calorieNumeric.Size = new System.Drawing.Size(74, 23);
-			this.calorieNumeric.TabIndex = 18;
-			this.calorieNumeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			this.calorieNumeric.Value = new decimal(new int[] {
-            1500,
-            0,
-            0,
-            0});
-			// 
-			// saveButton
-			// 
-			this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.saveButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-			this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-			this.saveButton.ForeColor = System.Drawing.Color.OliveDrab;
-			this.saveButton.Location = new System.Drawing.Point(535, 16);
-			this.saveButton.Name = "saveButton";
-			this.saveButton.Size = new System.Drawing.Size(85, 59);
-			this.saveButton.TabIndex = 19;
-			this.saveButton.Text = "Save Day";
-			this.saveButton.UseVisualStyleBackColor = false;
-			this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
-			// 
 			// MainUC
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,8 +345,8 @@
 			this.Size = new System.Drawing.Size(639, 436);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.mealNumeric)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.calorieNumeric)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.mealNumeric)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
