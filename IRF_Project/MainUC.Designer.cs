@@ -44,12 +44,15 @@
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.label8 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.generateMealCountTextBox = new System.Windows.Forms.TextBox();
-			this.generateCalorieTextBox = new System.Windows.Forms.TextBox();
 			this.generateErrorLabel = new System.Windows.Forms.Label();
 			this.sorterDropdown = new System.Windows.Forms.ComboBox();
 			this.mealName = new System.Windows.Forms.Label();
+			this.mealNumeric = new System.Windows.Forms.NumericUpDown();
+			this.calorieNumeric = new System.Windows.Forms.NumericUpDown();
+			this.saveButton = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.mealNumeric)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.calorieNumeric)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// listBox1
@@ -189,10 +192,11 @@
 			this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.panel1.BackColor = System.Drawing.Color.OldLace;
+			this.panel1.Controls.Add(this.saveButton);
+			this.panel1.Controls.Add(this.calorieNumeric);
+			this.panel1.Controls.Add(this.mealNumeric);
 			this.panel1.Controls.Add(this.label8);
 			this.panel1.Controls.Add(this.label7);
-			this.panel1.Controls.Add(this.generateMealCountTextBox);
-			this.panel1.Controls.Add(this.generateCalorieTextBox);
 			this.panel1.Controls.Add(this.generateErrorLabel);
 			this.panel1.Controls.Add(this.button1);
 			this.panel1.Location = new System.Drawing.Point(0, 348);
@@ -203,7 +207,7 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(128, 5);
+			this.label8.Location = new System.Drawing.Point(127, 5);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(60, 13);
 			this.label8.TabIndex = 16;
@@ -217,22 +221,6 @@
 			this.label7.Size = new System.Drawing.Size(77, 13);
 			this.label7.TabIndex = 15;
 			this.label7.Text = "Desired calorie";
-			// 
-			// generateMealCountTextBox
-			// 
-			this.generateMealCountTextBox.Location = new System.Drawing.Point(131, 21);
-			this.generateMealCountTextBox.Name = "generateMealCountTextBox";
-			this.generateMealCountTextBox.Size = new System.Drawing.Size(56, 20);
-			this.generateMealCountTextBox.TabIndex = 14;
-			this.generateMealCountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-			// 
-			// generateCalorieTextBox
-			// 
-			this.generateCalorieTextBox.Location = new System.Drawing.Point(40, 21);
-			this.generateCalorieTextBox.Name = "generateCalorieTextBox";
-			this.generateCalorieTextBox.Size = new System.Drawing.Size(74, 20);
-			this.generateCalorieTextBox.TabIndex = 13;
-			this.generateCalorieTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
 			// 
 			// generateErrorLabel
 			// 
@@ -267,6 +255,73 @@
 			this.mealName.TabIndex = 15;
 			this.mealName.Text = "Name...";
 			// 
+			// mealNumeric
+			// 
+			this.mealNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.mealNumeric.Location = new System.Drawing.Point(130, 21);
+			this.mealNumeric.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+			this.mealNumeric.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+			this.mealNumeric.Name = "mealNumeric";
+			this.mealNumeric.Size = new System.Drawing.Size(56, 23);
+			this.mealNumeric.TabIndex = 17;
+			this.mealNumeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.mealNumeric.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+			// 
+			// calorieNumeric
+			// 
+			this.calorieNumeric.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.calorieNumeric.Increment = new decimal(new int[] {
+            100,
+            0,
+            0,
+            0});
+			this.calorieNumeric.Location = new System.Drawing.Point(40, 21);
+			this.calorieNumeric.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+			this.calorieNumeric.Minimum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
+			this.calorieNumeric.Name = "calorieNumeric";
+			this.calorieNumeric.Size = new System.Drawing.Size(74, 23);
+			this.calorieNumeric.TabIndex = 18;
+			this.calorieNumeric.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+			this.calorieNumeric.Value = new decimal(new int[] {
+            1500,
+            0,
+            0,
+            0});
+			// 
+			// saveButton
+			// 
+			this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.saveButton.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+			this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.saveButton.ForeColor = System.Drawing.Color.OliveDrab;
+			this.saveButton.Location = new System.Drawing.Point(535, 16);
+			this.saveButton.Name = "saveButton";
+			this.saveButton.Size = new System.Drawing.Size(85, 59);
+			this.saveButton.TabIndex = 19;
+			this.saveButton.Text = "Save Day";
+			this.saveButton.UseVisualStyleBackColor = false;
+			this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+			// 
 			// MainUC
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -290,6 +345,8 @@
 			this.Size = new System.Drawing.Size(639, 436);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.mealNumeric)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.calorieNumeric)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -311,12 +368,13 @@
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label allCalorieLabel;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.TextBox generateMealCountTextBox;
-		private System.Windows.Forms.TextBox generateCalorieTextBox;
 		private System.Windows.Forms.Label generateErrorLabel;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.ComboBox sorterDropdown;
 		private System.Windows.Forms.Label mealName;
+		private System.Windows.Forms.NumericUpDown mealNumeric;
+		private System.Windows.Forms.NumericUpDown calorieNumeric;
+		private System.Windows.Forms.Button saveButton;
 	}
 }

@@ -12,10 +12,13 @@ namespace IRF_Project
 {
 	public partial class MainUC : UserControl
 	{
-		MealDatabaseEntities data = new MealDatabaseEntities();
+		MealDatabaseEntities1 data = new MealDatabaseEntities1();
 
 		List<Meal> allMeals = new List<Meal>();
 		List<Meal> selected = new List<Meal>();
+
+		List<DayProgress> progressList = new List<DayProgress>();
+
 		int allCalorie = 0;
 
 		public MainUC()
@@ -28,6 +31,11 @@ namespace IRF_Project
 			listBox1.DataSource = ilist.ToList();
 
 			listBox1.DisplayMember = "Name";
+
+			//mentéshez
+			var jlist = from j in data.DayProgresses
+						select j;
+			progressList = jlist.ToList();
 		}
 
 		private void addButton_Click(object sender, EventArgs e)
@@ -50,7 +58,7 @@ namespace IRF_Project
 		/// <summary>
 		/// Frissíti a kiválasztott elemekből álló ListBox-ot.
 		/// </summary>
-		void RefreshSelectedList()
+		private void RefreshSelectedList()
 		{
 			listBox2.DataSource = null;
 			listBox2.DataSource = selected;
@@ -93,11 +101,11 @@ namespace IRF_Project
 		{
 			
 			int cal = 0;
-			int meal = 0;
+			int meal = 0;			
 			try
 			{
-				cal = Int32.Parse(generateCalorieTextBox.Text);
-				meal = Int32.Parse(generateMealCountTextBox.Text);
+				cal = Int32.Parse(calorieNumeric.Text);
+				meal = Int32.Parse(mealNumeric.Text);
 			}
 			catch
 			{
@@ -172,6 +180,23 @@ namespace IRF_Project
 			listBox1.DataSource = newSort;
 			listBox1.DisplayMember = "Name";
 			listBox1.ClearSelected();
+		}
+
+		private void saveButton_Click(object sender, EventArgs e)
+		{
+			Console.WriteLine(progressList.Count + 1 + " " + allCalorie + " " + selected.Count);
+
+			///létrehozunk egy új napot
+			DayProgress newDay = new DayProgress(progressList.Count+1, allCalorie, selected.Count);
+			
+			///a kiválasztott elemek id-ját kilisitázva átadjuk
+			newDay.CreateMealString((from item in selected select item.Id).ToList());
+			Console.WriteLine("mealstring: " + newDay.MealString + ", " + newDay.MealCount);
+
+			///a napot hozzáadjuk a táblához
+			data.DayProgresses.Add(newDay);
+			data.SaveChanges();
+			Console.WriteLine("added");
 		}
 	}
 }
