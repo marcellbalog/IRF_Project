@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IRF_Project.UserControls;
 
 namespace IRF_Project
 {
@@ -35,6 +36,14 @@ namespace IRF_Project
 			ProgressUC ProgressPanel = new ProgressUC();
 			panel1.Controls.Add(ProgressPanel);
 			ProgressPanel.Dock = DockStyle.Fill;
+		}
+
+		private void button2_Click(object sender, EventArgs e)
+		{
+			panel1.Controls.Clear();
+			MealTableUC MealPanel = new MealTableUC();
+			panel1.Controls.Add(MealPanel);
+			MealPanel.Dock = DockStyle.Fill;
 		}
 	}
 }

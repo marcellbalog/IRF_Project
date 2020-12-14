@@ -125,6 +125,12 @@
       <DependentUpon>Model2.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="UserControls\MealTableUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MealTableUC.Designer.cs">
+      <DependentUpon>MealTableUC.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ProgressUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\MainUC.resx">
       <DependentUpon>MainUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MealTableUC.resx">
+      <DependentUpon>MealTableUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ProgressUC.resx">
       <DependentUpon>ProgressUC.cs</DependentUpon>

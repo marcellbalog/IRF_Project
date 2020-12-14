@@ -50,6 +50,10 @@
 			this.generateErrorLabel = new System.Windows.Forms.Label();
 			this.sorterDropdown = new System.Windows.Forms.ComboBox();
 			this.mealName = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.label11 = new System.Windows.Forms.Label();
+			this.label12 = new System.Windows.Forms.Label();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.calorieNumeric)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.mealNumeric)).BeginInit();
@@ -133,9 +137,9 @@
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 			this.label5.Location = new System.Drawing.Point(434, 169);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(49, 17);
+			this.label5.Size = new System.Drawing.Size(42, 17);
 			this.label5.TabIndex = 7;
-			this.label5.Text = "Carbs:";
+			this.label5.Text = "Carb:";
 			// 
 			// label6
 			// 
@@ -318,17 +322,65 @@
 			// mealName
 			// 
 			this.mealName.AutoSize = true;
-			this.mealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.mealName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.mealName.ForeColor = System.Drawing.Color.DarkSlateGray;
 			this.mealName.Location = new System.Drawing.Point(435, 82);
 			this.mealName.Name = "mealName";
-			this.mealName.Size = new System.Drawing.Size(60, 18);
+			this.mealName.Size = new System.Drawing.Size(67, 18);
 			this.mealName.TabIndex = 15;
 			this.mealName.Text = "Name...";
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label9.Location = new System.Drawing.Point(434, 197);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(32, 17);
+			this.label9.TabIndex = 16;
+			this.label9.Text = "Fat:";
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.label10.Location = new System.Drawing.Point(497, 197);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(26, 15);
+			this.label10.TabIndex = 19;
+			this.label10.Text = "N/A";
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.label11.Location = new System.Drawing.Point(497, 169);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(26, 15);
+			this.label11.TabIndex = 18;
+			this.label11.Text = "N/A";
+			// 
+			// label12
+			// 
+			this.label12.AutoSize = true;
+			this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+			this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+			this.label12.Location = new System.Drawing.Point(497, 140);
+			this.label12.Name = "label12";
+			this.label12.Size = new System.Drawing.Size(26, 15);
+			this.label12.TabIndex = 17;
+			this.label12.Text = "N/A";
 			// 
 			// MainUC
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.Controls.Add(this.label10);
+			this.Controls.Add(this.label11);
+			this.Controls.Add(this.label12);
+			this.Controls.Add(this.label9);
 			this.Controls.Add(this.mealName);
 			this.Controls.Add(this.sorterDropdown);
 			this.Controls.Add(this.panel1);
@@ -379,5 +431,9 @@
 		private System.Windows.Forms.NumericUpDown mealNumeric;
 		private System.Windows.Forms.NumericUpDown calorieNumeric;
 		private System.Windows.Forms.Button saveButton;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Label label12;
 	}
 }

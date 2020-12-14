@@ -32,13 +32,13 @@ namespace IRF_Project
 		}
 
 		public void CreateMealString(List<string> mealNames)
-		{			
+		{
 			MealString = "";
 			for (int i = 0; i < mealNames.Count; i++)
 			{
 				MealString = MealString.Insert(MealString.Length, mealNames[i]);
 				MealString = MealString.Insert(MealString.Length, ";");
-			}			
+			}
 		}
 	}
 }

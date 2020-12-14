@@ -52,7 +52,7 @@ namespace IRF_Project
 
 		private void removeButton_Click(object sender, EventArgs e)
 		{
-			if (listBox1.SelectedItem == null)
+			if (listBox2.SelectedItem == null)
 				return;
 
 			var id = (Meal)listBox2.SelectedItem;
