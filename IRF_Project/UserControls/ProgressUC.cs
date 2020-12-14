@@ -44,6 +44,8 @@ namespace IRF_Project
 			series.XValueMember = "Id";
 			series.YValueMembers = "Calorie";
 			series.BorderWidth = 2;
+			series.MarkerStyle = MarkerStyle.Diamond;
+			series.MarkerSize = 10;
 
 			var legend = progressChart.Legends[0];
 			legend.Enabled = false;			
