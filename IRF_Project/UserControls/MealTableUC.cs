@@ -15,6 +15,8 @@ namespace IRF_Project.UserControls
 
 		MealDatabaseEntities1 data = new MealDatabaseEntities1();
 		List<Meal> meals = new List<Meal>();
+		List<Meal> newMeals = new List<Meal>();
+
 
 		public MealTableUC()
 		{
@@ -33,6 +35,10 @@ namespace IRF_Project.UserControls
 		{
 			try
 			{
+				for (int i = 0; i < newMeals.Count; i++)
+				{
+					data.Meals.Add(newMeals[i]);
+				}
 				data.SaveChanges();
 				errorLabel.Visible = false;
 			}
@@ -43,10 +49,10 @@ namespace IRF_Project.UserControls
 		}
 
 		private void addButton_Click(object sender, EventArgs e)
-		{
-			meals.Add(new Meal());
+		{			
+			newMeals.Add(new Meal());
 			dataGridView1.DataSource = null;
-			dataGridView1.DataSource = meals;
+			dataGridView1.DataSource = newMeals;
 		}
 	}
 }
